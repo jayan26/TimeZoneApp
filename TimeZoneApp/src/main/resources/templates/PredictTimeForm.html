@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Time</title>
+</head>
+<body>
+
+<p>Enter Time in any field to calculate other time</p>
+<p>Please enter in the format mm/dd/yy hh:mm AM/PM </p>
+
+<form action="#" th:object="${locationTime}" method="post" th:action="@{/zone/time/predict}">
+
+    <table border="1">
+
+        <tr>
+            <td>Rajapalayam</td>
+            <td><input type="text" th:field="*{rajapalayam}"></td>
+        </tr>
+
+        <tr>
+            <td>Dubai</td>
+            <td><input type="text" th:field="*{dubai}"></td>
+        </tr>
+
+        <tr>
+            <td>Coventry</td>
+            <td><input type="text" th:field="*{london}"></td>
+        </tr>
+
+        <tr>
+            <td>San Antonio</td>
+            <td><input type="text" th:field="*{sanAntonio}"></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Calculate">
+</form>
+
+</body>
+</html>

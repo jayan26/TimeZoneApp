@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Time</title>
+</head>
+<body>
+
+<h3>Current Time!</h3>
+
+<form action="#" th:object="${allTime}" method="post" th:action="@{/zone/}">
+
+    <table border="1">
+
+        <tr>
+            <td>Rajapalayam</td>
+            <td><input type="text" th:field="*{rajapalayam}" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Dubai</td>
+            <td><input type="text" th:field="*{dubai}" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Coventry</td>
+            <td><input type="text" th:field="*{london}" readonly></td>
+        </tr>
+
+        <tr>
+            <td>San Antonio</td>
+            <td><input type="text" th:field="*{sanAntonio}" readonly></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Reurn to Home">
+</form>
+
+</body>
+</html>

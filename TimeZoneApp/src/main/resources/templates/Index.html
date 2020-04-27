@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<p>Please select an option..!</p>
+
+<form action="#" method="post" th:action="@{/zone/time}">
+
+    <table border="1">
+
+        <tr>
+            <td><button type="submit" name="action" value="currentTime">Current Time</button></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" name="action" value="predictTime">Predict Time</button></td>
+        </tr>
+
+    </table>
+
+</form>
+
+</body>
+</html>

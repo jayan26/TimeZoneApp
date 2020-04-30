@@ -1,6 +1,9 @@
 package com.fantastic4.timezone.service;
 
+import com.fantastic4.timezone.data.LocationTime;
 import com.fantastic4.timezone.data.ZonedLocationTime;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -33,13 +36,20 @@ public class TimeCalculatorService {
     /*
      * Calculate time for different zone from the input time zone
      */
-    public Map<String, LocalDateTime> calculate(Map<String, LocalDateTime> predictionFormData){
+    public String calculate(LocationTime locationTime){
 
-        for (Map.Entry<String, LocalDateTime> entry : predictionFormData.entrySet()) {
-            if(entry!=null){
-                enteredZone = entry.getKey();
-            }
-        }
+//        for (Map.Entry<String, LocalDateTime> entry : predictionFormData.entrySet()) {
+//            if(entry!=null){
+//                enteredZone = entry.getKey();
+//            }
+//        }
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        // Convert POJO to Map
+        Map<String, Object> map =
+                mapper.convertValue(locationTime, new TypeReference<Map<String, Object>>() {});
+
 
         return null;
     }

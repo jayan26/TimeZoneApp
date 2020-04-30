@@ -35,7 +35,7 @@ public class TimeZoneController {
      */
     @RequestMapping(value = "/time", params="action=currentTime")
     public String currentTime(ModelMap modelMap ) {
-        modelMap.addAttribute("allTime", timeCalculatorService.getCurrentTime());
+        modelMap.addAttribute("zonedLocationTime", timeCalculatorService.getCurrentTime());
         return "Current Time";
     }
 
@@ -55,6 +55,7 @@ public class TimeZoneController {
     @RequestMapping(value="/time/predict")
     public String PredictedTime(LocationTime locationTime, ModelMap modelMap){
         System.out.println("From Form: "+locationTime.getRajapalayam().toString());
+        timeCalculatorService.calculate(locationTime);
         modelMap.addAttribute("message", "I'm in predicted!!!");
         return "PredictedTime";
     }
